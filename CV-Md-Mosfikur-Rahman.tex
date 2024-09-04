@@ -1,29 +1,21 @@
-\documentclass[a4paper, 12pt]{article}
+\documentclass[a4paper, 12pt]{article.cls}
 
 \usepackage{url}
 \usepackage{parskip}
 
 \RequirePackage{color}
 \RequirePackage{graphicx}
-\usepackage[usenames, dvipsnames]{xcolor}
+\usepackage{xcolor}
 \usepackage[scale=0.9]{geometry}
 
 \usepackage{tabularx}
-
 \usepackage{enumitem}
-
-\newcolumntype{C}{>{\centering\arraybackslash}X}
-
 \usepackage{supertabular}
-\usepackage{tabularx}
-\newlength{\fullcollw}
-\setlength{\fullcollw}{0.47\textwidth}
-
 \usepackage{titlesec}
 \usepackage{multicol}
 \usepackage{multirow}
 
-\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titleformat{\section}{\Large\bfseries\raggedright}{}{0em}{}[\titlerule]
 \titlespacing{\section}{0pt}{10pt}{10pt}
 
 \usepackage[style=authoryear, sorting=ynt, maxbibnames=10]{biblatex}
@@ -36,16 +28,18 @@
 
 \usepackage{fontawesome5}
 
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+
 \newenvironment{jobshort}[2]{
     \begin{tabularx}
-    {\linewidth}{@{}l X r@{}}
+    {\linewidth}{@{}l C r@{}}
         \textbf{#1} & \hfill & #2 \\[3.75pt]
     \end{tabularx}
     }{ }
 
 \newenvironment{joblong}[2]{
     \begin{tabularx}
-    {\linewidth}{@{}l X r@{}}
+    {\linewidth}{@{}l C r@{}}
         \textbf{#1} & \hfill & #2 \\[3.75pt]
     \end{tabularx}
     \begin{minipage}[t]{\linewidth}
@@ -54,8 +48,6 @@
     \end{minipage} }
 
 \begin{document}
-
-    \pagestyle{plain}
 
     \begin{tabularx}{\linewidth}{@{} C @{}}
         \Huge{Md. Mosfikur Rahman} \\[7.5pt]
@@ -66,258 +58,16 @@
         \href{tel:+8801332512922}{\raisebox{-0.05\height}\faMobile \ +8801332512922} \\
     \end{tabularx}
 
-
-    \section{\textbf{Career Objective}}
-    I am a research-driven software engineer who has been intensively trained in contributing
-    towards related research in the fields of Data Science, Machine Learning, and Artificial
-    Intelligence using Java. I would be grateful to be involved in research into
-    which technological blends would be appropriate for practical application in
-    solving real-world problems. I would like to leverage my work experiences in the
-    scalable application development area and algorithm design in order to collaborate
-    with famous academics and professionals for progressive research and influential
-    publications at academic levels that have a contribution toward technological advancement.
-    My objective is to utilize my technical expertise along with interest in
-    research to make an valued contribution at an academic level by solving
-    complex problems using interdisciplinary approaches.
-
-
-    \section{\textbf{Education}}
-    \begin{tabularx}
-    {\linewidth}{@{}l X@{}}
-        2021 & Bachelor of Science (B.Sc.) in Computer Science
-        and Engineering
-        \newline
-        \textbf{Daffodil International University, Bangladesh} \hfill (CGPA: 3.83/4.00)
-        \\
-
-        2021 & Exchange Program in Computer Science and Engineering
-        \newline
-        \textbf{Adam Mickiewicz University, Poland} \hfill (Passed with 80\% Marks)
-        \\
-
-        2016 & Higher Secondary School Certificate
-        \newline
-        \textbf{Major General Mahmudul Hasan Adarsha College, Tangail} \hfill (GPA:
-        4.67/5.00) \\
-
-        2014 & Secondary School Certificate
-        \newline
-        \textbf{Police Lines Adarsha High School, Tangail} \hfill (GPA: 5.00/5.00)
-        \\
-    \end{tabularx}
-
-
-    \section{\textbf{Research Interest}}
-
-    \begin{itemize}[leftmargin=*,itemsep=2pt,parsep=0pt]
-        \item Data Science
-
-        \item Machine Learning
-
-        \item Artificial Intelligence
-
-        \item Internet of Things
-
-        \item Software Development
-    \end{itemize}
-
-
-    \section{\textbf{Publications}}
-    \begin{refsection}
-    [citations.bib]
-        \nocite{*}
-        \printbibliography
-        [heading=none]
-    \end{refsection}
-
-
-    \section{\textbf{Research Collaborations}}
-
-    \begin{itemize}[leftmargin=*,itemsep=2pt,parsep=0pt]
-        \item \textbf{Elsevier Reviewer}, Current Research in Behavioral Science.
-
-        \item \textbf{Elsevier Reviewer}, ISA Transactions.
-
-        \item \textbf{Elsevier Reviewer}, Natural Language Processing Journal.
-
-        \item \textbf{Elsevier Reviewer}, Journal of King Saud University - Computer
-        and Information Sciences.
-
-        \item \textbf{Reviewer}, 2022 4th International Conference on Deep Learning,
-        Artificial Intelligence and Robotics (ICDLAIR2022).
-
-        \item \textbf{Reviewer}, 2022 International Conference on Information Systems
-        and Management Science (ISMS2022).
-
-        \item \textbf{Reviewer}, 2022 International Conference on Communication and Information
-        Systems (ICCIS2022).
-    \end{itemize}
-
-
-    \section{\textbf{Work Experiences}}
-
-    \begin{joblong}
-    {Software Engineer, REVE Systems Ltd.}{July 2023 - Present}
-        \item Develop
-        and implement scalable Java applications using advanced design patterns. \item
-        Optimize data structures in Oracle DB for efficient storage and retrieval.
-        \item Research and integrate new tools, libraries, APIs, and frameworks for enhanced
-        performance.
-    \end{joblong}
-
-    \begin{joblong}
-    {Software Engineer, BJIT Group}{April 2022 - June 2023}
-        \item Implement
-        JavaEE back-end/API using REST, SOAP, Spring, and microservices. \item Build
-        enterprise apps using modern Java web frameworks and Thymeleaf. \item Create
-        fundamental design documents, including API specifications and UMLs.
-    \end{joblong}
-
-    \begin{joblong}
-    {Trainee Software Engineer, BJIT Group}{October 2021 - March 2022}
-        \item
-        Acquired foundational knowledge in software engineering through structured
-        training. \item Assisted in coding, debugging, and testing while learning industry
-        best practices. \item Developed skills in JavaEE, REST, SOAP, Spring, and
-        front-end technologies.
-    \end{joblong}
-
-
-    \section{\textbf{Projects}}
-    \begin{tabularx}
-    {\linewidth}{ @{}l r@{} }
-        \textbf{Customs Bond Management System, NBR} & \hfill
-        \textit{\href{https://cusbond.gov.bd/}{Link to Demo}} \\[3.75pt]
-        \multicolumn{2}{@{}X@{}}{%
-            Responsibilities:
-            \begin{itemize}[leftmargin=*]
-                \item Held key roles across various modules of the CBMS project for the National
-                Board of Revenue (NBR).
-
-                \item Acted as the module owner including Legal and Case Information System,
-                Utilization Declaration System.
-
-                \item Implemented BGMEA and BKMEA Database integration for Utilization Declaration.
-
-                \item Employed a diverse tech stack comprising Spring Boot, Thymeleaf, and
-                Oracle DB for project execution.
-            \end{itemize}
-        }
-        \\
-    \end{tabularx}
-
-    \begin{tabularx}
-    {\linewidth}{ @{}l r@{} }
-        \textbf{Rakuten Echiba Backend Development, Rakuten}
-        & \hfill \textit{\href{https://www.rakuten.co.jp/}{Link to Demo}} \\[3.75pt]
-        \multicolumn{2}{@{}X@{}}{%
-            Responsibilities:
-            \begin{itemize}[leftmargin=*]
-                \item Solely focused on backend development for the Rakuten Echiba project
-                utilizing Spring Boot framework.
-
-                \item Managed Oracle database operations to ensure seamless data handling.
-
-                \item Led the implementation of a custom framework tailored to meet project-specific
-                requirements.
-            \end{itemize}
-        }
-        \\
-    \end{tabularx}
-
-    \begin{tabularx}
-    {\linewidth}{ @{}l r@{} }
-        \textbf{Denka Pharmaceuticals Full-stack
-        Development, Denka} & \hfill \textit{\href{https://www.denka.co.jp/eng/}{Link
-        to Demo}} \\[3.75pt]
-        \multicolumn{2}{@{}X@{}}{%
-            Responsibilities:
-            \begin{itemize}[leftmargin=*]
-                \item Engaged in both backend and frontend development for Denka Pharmaceuticals.
-
-                \item Utilized Spring Boot and Thymeleaf for backend and frontend development,
-                respectively.
-
-                \item Contributed to frontend enhancements using React JS.
-
-                \item Managed data storage and retrieval using MySQL database.
-            \end{itemize}
-        }
-        \\
-    \end{tabularx}
-
-    \begin{tabularx}
-    {\linewidth}{ @{}l r@{} }
-        \textbf{Mochida Pharmaceuticals Backend
-        Development, Mochida} & \hfill \textit{\href{https://www.mochida.co.jp/english/}{Link
-        to Demo}} \\[3.75pt]
-        \multicolumn{2}{@{}X@{}}{%
-            Responsibilities:
-            \begin{itemize}[leftmargin=*]
-                \item Developed backend functionalities for Mochida Pharmaceuticals using Spring
-                Boot and Spring Batch.
-
-                \item Implemented a unique database solution named Spiral DB to optimize data
-                management processes.
-            \end{itemize}
-        }
-        \\
-    \end{tabularx}
-
-
-    \section{\textbf{Skills}}
-    \begin{tabularx}
-    {\linewidth}{@{}l X@{}}
-        \textbf{Core Skills} & \normalsize{OOP, REST API, SOAP, Micro-services, Data Structures, UML, Code Review}
-        \\ \textbf{Programming Languages} & \normalsize{Java, JavaScript, Python} \\
-        \textbf{Frameworks} & \normalsize{Spring Boot, Spring Batch, Bootstrap, Thymeleaf, React JS}
-        \\ \textbf{Technical Tools} & \normalsize{Git, Postman, IntelliJ IDEA, DataGrip}
-        \\ \textbf{Database Expertise} & \normalsize{Oracle, MySQL, MongoDB, Spiral DB}
-        \\
-    \end{tabularx}
-
-
-    \section{\textbf{Extracurricular Activities}}
-
-    \begin{itemize}[leftmargin=*,itemsep=2pt,parsep=0pt]
-        \item \textbf{Guest Speaker}, entitled “How to get started: Undergraduate
-        Research Journey”, organized by Computer \& Programming Club, Daffodil
-        International University.
-
-        \item \textbf{Vice President}, Research \& Career Wing (2021), Computer \&
-        Programming Club, Daffodil International University.
-
-        \item \textbf{Winner}, Data Science Hackathon – 2021 in Data Science Summit organized
-        by Data Science Lab, Daffodil International University.
-
-        \item \textbf{Session Instructor}, Workshop entitled “Python – Everything You
-        Need to Know” organized by Computer \& Programming Club, Daffodil
-        International University.
-
-        \item \textbf{Speaker}, Webinar entitled “Session on Online Course” organized
-        by Computer \& Programming Club, Daffodil International University.
-
-        \item \textbf{Speaker}, Webinar entitled “Webinar on Research” organized by Some
-        of Researchers in Daffodil International University.
-    \end{itemize}
-
-
-    \section{\textbf{References}}
-    \begin{tabularx}
-    {\linewidth}{@{}l X@{}}
-
-        \textbf{Anisuzzaman Rubel} & Consultant \textendash Enterprise Integrator, Aspire
-        to Innovate (a2i),
-        \newline
-        ICT Division, Dhaka, Bangladesh \\ & Contact: +880 1906-994487 \\ & Email: \href{mailto:anis.zaman@a2i.gov.bd}{anis.zaman@a2i.gov.bd}
-        \\[3.75pt]
-
-        \textbf{Md. Minhajur Rahman} & Senior General Manager, ENT\textendash4, Engineering
-        Division,
-        \newline
-        BJIT Group, Dhaka, Bangladesh \\ & Contact: +880 1816-292692 \\ & Email: \href{mailto:minhajur.rahman@bjitgroup.com}{minhajur.rahman@bjitgroup.com}
-        \\[3.75pt]
-    \end{tabularx}
+    \input{sections/career_objective}
+    \input{sections/education}
+    \input{sections/research_interest}
+    \input{sections/publications}
+    \input{sections/research_collaborations}
+    \input{sections/work_experiences}
+    \input{sections/projects}
+    \input{sections/skills}
+    \input{sections/extracurricular_activities}
+    \input{sections/references}
 
     \vfill
     \center{\footnotesize Updated On: \today}
