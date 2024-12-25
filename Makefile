@@ -1,4 +1,4 @@
-NAME = CV-Md-Mosfikur-Rahman
+NAME = CV_Md-Mosfikur-Rahman
 
 all:
 	latexmk -pdf ${NAME}.tex

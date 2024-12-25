@@ -22,7 +22,7 @@ This repository contains the LaTeX source files, citations, and other relevant m
 - **.github/workflows/**: Contains the GitHub Actions workflow files.
     - `build.yml`: Workflow to build and deploy the CV as a PDF and HTML file.
 
-- **CV-Md-Mosfikur-Rahman.tex**: Main LaTeX file that compiles the entire CV.
+- **CV_Md-Mosfikur-Rahman.tex**: Main LaTeX file that compiles the entire CV.
 
 - **index.html**: Responsible Page for Providing CV
 
@@ -44,7 +44,7 @@ If you prefer to build the CV locally, you can use the `Makefile`. Ensure you ha
 make
 ```
 
-This command will generate the `CV-Md-Mosfikur-Rahman.pdf` file in the current directory.
+This command will generate the `CV_Md-Mosfikur-Rahman.pdf` file in the current directory.
 
 ## Viewing the CV
 
