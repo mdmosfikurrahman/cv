@@ -1,79 +1,293 @@
-\documentclass[a4paper, 12pt]{article}
+\documentclass[a4paper,11pt]{article}
 
-\usepackage{url}
-\usepackage{parskip}
-
-\RequirePackage{color}
-\RequirePackage{graphicx}
-\usepackage{xcolor}
-\usepackage[scale=0.9]{geometry}
-
-\usepackage{tabularx}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=2.2cm, top=2.0cm, bottom=2.0cm]{geometry}
 \usepackage{enumitem}
-\usepackage{supertabular}
 \usepackage{titlesec}
-\usepackage{multicol}
-\usepackage{multirow}
+\usepackage{tabularx}
+\usepackage{ragged2e}
+\usepackage{needspace}
+\usepackage{microtype}
+\usepackage{fancyhdr}
+\usepackage[hidelinks]{hyperref}
 
-\titleformat{\section}{\Large\bfseries\raggedright}{}{0em}{}[\titlerule]
-\titlespacing{\section}{0pt}{10pt}{10pt}
+\hypersetup{
+  pdftitle={Md. Mosfikur Rahman \textendash{} Curriculum Vitae},
+  pdfauthor={Md. Mosfikur Rahman},
+  pdfsubject={Curriculum Vitae},
+  pdfkeywords={Applied Machine Learning, Distributed Systems, Data-Intensive Systems,
+    Health Analytics, IoT, Machine Learning for Security, Software Engineering},
+  pdfcreator={},
+  pdfproducer={},
+}
 
-\usepackage[style=authoryear, sorting=ynt, maxbibnames=10]{biblatex}
+\ifdefined\pdfgentounicode
+  \input{glyphtounicode}
+  \pdfgentounicode=1
+\fi
 
-\usepackage[unicode, draft=false]{hyperref}
-\definecolor{linkcolour}{rgb}{0,0.2,0.6}
-\hypersetup{colorlinks, breaklinks, urlcolor=linkcolour, linkcolor=linkcolour}
-\addbibresource{citations/citations.bib}
-\setlength{\bibitemsep}{1em}
+\setlength{\parindent}{0pt}
+\tolerance=1500
+\emergencystretch=2em
 
-\usepackage{fontawesome5}
+% Page number from page 2 onward, with name, as academic CVs do
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyfoot[R]{\small Md. Mosfikur Rahman \quad \textbar\quad \thepage}
+\fancypagestyle{firstpage}{\fancyhf{}\fancyfoot[R]{\small \thepage}}
 
-\newcolumntype{C}{>{\centering\arraybackslash}X}
+\titleformat{\section}
+  {\large\scshape}
+  {}{0em}{}
+  [\vspace{-6pt}\rule{\textwidth}{0.5pt}\vspace{-2pt}]
+\titlespacing*{\section}{0pt}{14pt}{7pt}
 
-\newenvironment{jobshort}[2]{
-    \begin{tabularx}
-    {\linewidth}{@{}l C r@{}}
-        \textbf{#1} & \hfill & #2 \\[3.75pt]
-    \end{tabularx}
-    }{ }
+% A section heading never sits alone at the foot of a page
+\let\origsection\section
+\renewcommand{\section}[1]{\needspace{7\baselineskip}\origsection{#1}}
 
-\newenvironment{joblong}[2]{
-    \begin{tabularx}
-    {\linewidth}{@{}l C r@{}}
-        \textbf{#1} & \hfill & #2 \\[3.75pt]
-    \end{tabularx}
-    \begin{minipage}[t]{\linewidth}
-        \begin{itemize}[nosep,after=\strut, leftmargin=1em,
-            itemsep=3pt,label=\textbullet] }{ \end{itemize}
-    \end{minipage} }
+% {left}{right}
+\newcommand{\twocol}[2]{%
+  \begin{tabularx}{\textwidth}{@{}Xr@{}}#1 & #2\end{tabularx}%
+}
+
+% {years}{content}
+\newenvironment{datedlist}
+  {\begin{list}{}{%
+     \setlength{\leftmargin}{3.3cm}\setlength{\labelwidth}{2.9cm}
+     \setlength{\labelsep}{0.4cm}\setlength{\itemsep}{7pt}
+     \setlength{\parsep}{0pt}\setlength{\topsep}{4pt}
+     \renewcommand{\makelabel}[1]{##1\hfill}}%
+   \interlinepenalty=10000 }
+  {\end{list}}
+
+% Numbered publication list. interlinepenalty keeps a single citation from
+% being split across a page boundary; entries move whole instead.
+\newenvironment{pubs}
+  {\begin{list}{}{%
+     \setlength{\leftmargin}{1.5cm}\setlength{\labelwidth}{1.2cm}
+     \setlength{\labelsep}{0.3cm}\setlength{\itemsep}{5pt}
+     \setlength{\parsep}{0pt}\setlength{\topsep}{4pt}
+     \renewcommand{\makelabel}[1]{##1\hfill}}%
+   \interlinepenalty=10000 }
+  {\end{list}}
+
+
+\newcommand{\me}{\textbf{Rahman, Md. Mosfikur}}
+% \detokenize keeps the underscore in a DOI from being read as maths
+\newcommand{\doi}[1]{\href{https://doi.org/#1}{\small doi:\detokenize{#1}}}
 
 \begin{document}
+\thispagestyle{firstpage}
 
-    \begin{tabularx}{\linewidth}{@{} C @{}}
-        \Huge{Md. Mosfikur Rahman} \\[7.5pt]
-    
-        \href{https://github.com/mdmosfikurrahman}{\raisebox{-0.05\height}\faGithub\ GitHub} \ $|$ \
-        \href{https://linkedin.com/in/mdmosfikurrahman}{\raisebox{-0.05\height}\faLinkedin\ LinkedIn} \ $|$ \
-        \href{https://mdmosfikurrahman.github.io}{\raisebox{-0.05\height}\faGlobe \ Portfolio} \ $|$ \
-        \href{https://scholar.google.com/citations?user=1GAfMAEAAAAJ}{\raisebox{-0.05\height}\faGraduationCap\ Scholar} \ $|$ \
-        \href{mailto:mdmosfikurrahman.cse@gmail.com}{\raisebox{-0.05\height}\faEnvelope \ mdmosfikurrahman.cse@gmail.com} \\
-        % \href{tel:+8801797554948}{\raisebox{-0.05\height}\faMobile \ +8801797554948} \\
-    \end{tabularx}
+% ---------------- Header ----------------
+\newcommand{\sep}{\,\textperiodcentered\,}
+
+\begin{center}
+  {\Huge\scshape Md. Mosfikur Rahman}
+
+  \vspace{5pt}
+  {\small
+   Dhaka, Bangladesh \sep +880 1797-554948 \sep
+   \href{mailto:mdmosfikurrahman.cse@gmail.com}{mdmosfikurrahman.cse@gmail.com}}
+
+  \vspace{2pt}
+  {\small
+   \href{https://mdmosfikurrahman.github.io}{mdmosfikurrahman.github.io}
+   \sep
+   \href{https://github.com/mdmosfikurrahman}{github.com/mdmosfikurrahman}
+   \sep
+   \href{https://linkedin.com/in/mdmosfikurrahman}{linkedin.com/in/mdmosfikurrahman}}
+\end{center}
+
+\vspace{-2pt}
+
+% ---------------- Research Interests ----------------
+\section{Research Interests}
+
+Applied machine learning for data-intensive systems: health and behavioural analytics,
+machine learning for systems and security, and the large-scale distributed software that
+makes such analysis possible in production.
+
+% ---------------- Education ----------------
+\section{Education}
+
+\begin{datedlist}
+\item[2018 -- 2021] \textbf{B.Sc. in Computer Science and Engineering}\\
+  Daffodil International University, Dhaka, Bangladesh\\
+  CGPA 3.83 / 4.00
+
+\item[2021] \textbf{Erasmus+ International Exchange} (one semester)\\
+  Adam Mickiewicz University, Pozna\'n, Poland
+\end{datedlist}
+
+% ---------------- Skills ----------------
+\section{Technical Skills}
+
+\begin{tabularx}{\textwidth}{@{}p{4.0cm}X@{}}
+\textbf{Research} & Experimental design, statistical analysis, feature engineering,
+  model evaluation, academic writing \\[5pt]
+\textbf{Machine Learning} & Supervised learning, deep learning, CNNs, applied NLP,
+  data preprocessing and visualisation \\[5pt]
+\textbf{Languages} & Python, C\#, Java, TypeScript, SQL \\[5pt]
+\textbf{Systems} & Distributed systems, microservice architecture, REST, GraphQL, gRPC,
+  event streaming, Docker, Kubernetes, Azure, AWS \\[5pt]
+\textbf{Data} & SQL Server, PostgreSQL, Oracle, MySQL, MongoDB, DynamoDB, Redis,
+  Elasticsearch \\[5pt]
+\textbf{Certifications} & IBM Data Science Professional Certificate (Coursera) \\
+\end{tabularx}
+
+% ---------------- Publications ----------------
+\section{Publications}
+
+Ten peer-reviewed publications, three as first author; author name in bold.
+\textbf{185 citations, h-index 4, i10-index 4}
+({\small\textit{Google Scholar, September 2026}}).
+
+\vspace{6pt}
+\textbf{\normalsize Journal Articles}
+\vspace{-2pt}
+
+\begin{pubs}
+\item[{[J3]}] \me, Saifuzzaman, M., Ahmed, A., Mahin, M.~F., \& Shetu, S.~F. (2021).
+  Impact of COVID-19 on mental health: A quantitative analysis of anxiety and depression
+  based on regular life and internet use.
+  \textit{Current Research in Behavioral Sciences}, 2, 100037. Elsevier.
+  \doi{10.1016/j.crbeha.2021.100037}\\
+  \textit{First author.}
+
+\item[{[J2]}] Shetu, S.~F., \me, Ahmed, A., Mahin, M.~F., Akib, M.~A.~U., \&
+  Saifuzzaman, M. (2021). Impactful e-learning framework: A new hybrid form of education.
+  \textit{Current Research in Behavioral Sciences}, 2, 100038. Elsevier.
+  \doi{10.1016/j.crbeha.2021.100038}\\
+  \textit{Most-cited work.}
+
+\item[{[J1]}] Saifuzzaman, M., \me, Shetu, S.~F., \& Moon, N.~N. (2021).
+  COVID-19 and Bangladesh: Situation report, comparative analysis, and case study.
+  \textit{Current Research in Behavioral Sciences}, 2, 100034. Elsevier.
+  \doi{10.1016/j.crbeha.2021.100034}
+\end{pubs}
+
+\vspace{6pt}
+\textbf{\normalsize Conference Papers and Book Chapters}
+\vspace{-2pt}
+
+\begin{pubs}
+\item[{[C7]}] Johora, F.~T., Mahfuja, I.~B., Masuqur Rahman, A.~N.~M., \me, \&
+  Rahman, M.~S. (2024). Machine Learning-Based Prediction of COVID-19: A Robust Approach
+  for Early Diagnosis and Treatment. In \textit{Proceedings of the Fifth International
+  Conference on Trends in Computational and Cognitive Engineering} (pp. 205--215).
+  Springer Nature Singapore. \doi{10.1007/978-981-97-1923-5_16}
+
+\item[{[C6]}] Johora, F.~T., Alamin-Ul-Islam, Yesmin, F., \& \me{} (2023).
+  A New Chaotic-Based Analysis of Data Encryption and Decryption. In
+  \textit{Advances in Data Science and Artificial Intelligence} (pp. 455--468).
+  Springer International Publishing. \doi{10.1007/978-3-031-16178-0_32}
+
+\item[{[C5]}] Islam, T., \me, Jabiullah, M.~I., \& Saifuzzaman, M. (2023).
+  Cyber Security Intruder Detection Using Deep Learning Approach. In
+  \textit{Information Systems and Management Science} (pp. 518--530).
+  Springer International Publishing. \doi{10.1007/978-3-031-13150-9_42}
+
+\item[{[C4]}] Yesmin, F., \me, Saifuzzaman, M., \& Moon, N.~N. (2022).
+  Pandemic Effect on Education System Among University Students. In
+  \textit{Progresses in Artificial Intelligence \& Robotics: Algorithms \& Applications}
+  (pp. 157--168). Springer International Publishing.
+  \doi{10.1007/978-3-030-98531-8_16}
+
+\item[{[C3]}] \me, Foysal, M.~R., Moon, N.~N., \& Nur, F.~N. (2021).
+  TraFoo: An Android Application for Food Delivery in Train. In
+  \textit{2021 International Conference on Smart Generation Computing, Communication and
+  Networking (SMART GENCON)} (pp. 1--7). IEEE.
+  \doi{10.1109/SMARTGENCON51891.2021.9645900}\\
+  \textit{First author.}
+
+\item[{[C2]}] Moon, N.~N., Sharmin, S., Hossain, R.~A., Jahan, I., Nur, F.~N., \& \me{}
+  (2021). Deep Learning Model for Detecting and Diagnosing Plant Disease. In
+  \textit{2021 International Conference on Smart Generation Computing, Communication and
+  Networking (SMART GENCON)} (pp. 1--8). IEEE.
+  \doi{10.1109/SMARTGENCON51891.2021.9645857}
+
+\item[{[C1]}] \me, Abul Kashem, M., Mohiuddin, M., Hossain, M.~A., \& Nessa Moon, N.
+  (2020). Future City of Bangladesh: IoT Based Autonomous Smart Sewerage and Hazard
+  Condition Sharing System. In \textit{2020 IEEE International Women in Engineering (WIE)
+  Conference on Electrical and Computer Engineering (WIECON-ECE)} (pp. 126--130). IEEE.
+  \doi{10.1109/WIECON-ECE52138.2020.9397950}\\
+  \textit{First author.} \textbf{\textit{Best Paper Award.}}
+\end{pubs}
+
+% ---------------- Awards ----------------
+\section{Awards and Honours}
+
+\begin{datedlist}
+\item[2020] \textbf{IEEE Best Paper Award}, IEEE WIECON-ECE 2020, for [C1].
+\end{datedlist}
+
+% ---------------- Service ----------------
+\section{Peer Review}
+
+\begin{datedlist}
+\item[Journals]
+  \textit{ISA Transactions}\\
+  \textit{Journal of King Saud University -- Computer and Information Sciences}\\
+  \textit{Natural Language Processing Journal}\\
+  \textit{Current Research in Behavioral Sciences}
+
+\item[Conferences]
+  4th International Conference on Deep Learning, Artificial Intelligence and Robotics (2022)\\
+  International Conference on Information Systems and Management Science (2022)\\
+  International Conference on Communication and Information Systems (2022)
+\end{datedlist}
+
+% ---------------- Talks ----------------
+\section{Invited Talks and Presentations}
+
+\begin{datedlist}
+\item[2024] \textbf{Conference Speaker}, 10th IEEE International Women in Engineering
+  Conference on Electrical and Computer Engineering (WIECON-ECE 2024).
+
+\item[2021] \textbf{Guest Speaker}, ``How to Get Started: The Undergraduate Research
+  Journey.'' Computer \& Programming Club, Daffodil International University.
+\end{datedlist}
+
+% ---------------- Teaching ----------------
+\section{Mentoring and Academic Leadership}
+
+\begin{datedlist}
+\item[2024 -- Present] \textbf{Engineering Team Lead}, Akij iBOS Ltd.\\
+  Train and mentor junior engineers across three teams.
+
+\item[2021] \textbf{Vice President, Research \& Career Wing}, Computer \& Programming
+  Club, Daffodil International University\\
+  Led research workshops and mentorship programmes for undergraduates; advised peers on
+  publishing, academic writing, and conference presentation.
+
+\end{datedlist}
+
+% ---------------- Professional experience ----------------
+\section{Professional Experience}
+
+\begin{datedlist}
+\item[2024 -- Present] \textbf{Engineering Team Lead} (Software Engineer L-II),
+  Akij iBOS Ltd., Dhaka\\
+  Own end-to-end backend architecture for a multi-tenant travel booking platform of eight
+  .NET~9 microservices, taken from an empty repository to three live client deployments.
+  Designed a supplier aggregation layer fanning out over gRPC to eleven external
+  connectors, and a configuration-driven pricing engine.
+
+\item[2023 -- 2024] \textbf{Software Engineer}, REVE Systems Ltd., Dhaka\\
+  Delivered modules of the Customs Bond Management System for the National Board of
+  Revenue, a national platform digitising customs bond compliance. Improved system
+  throughput by approximately 25\% through query and data-access optimisation.
+
+\item[2022 -- 2023] \textbf{Software Engineer} (Backend), BJIT Group, Dhaka\\
+  Built a GraphQL Backend-for-Frontend unifying multiple services for Rakuten e-commerce
+  modules, reducing nested-query latency through resolver batching and schema stitching.
+\end{datedlist}
 
 
-    \input{sections/career_objective.tex}
-    \input{sections/education.tex}
-    \input{sections/research_interest.tex}
-    \input{sections/publications.tex}
-    \input{sections/research_collaborations.tex}
-    \input{sections/work_experiences.tex}
-    \input{sections/leadership.tex}
-    \input{sections/projects.tex}
-    \input{sections/skills.tex}
-    \input{sections/certifications.tex}
-    \input{sections/extracurricular_activities.tex}
-    \input{sections/references.tex}
 
-    \vfill
-    \center{\footnotesize Updated On: \today}
 \end{document}
