@@ -16,8 +16,9 @@
   pdftitle={Md. Mosfikur Rahman \textendash{} Curriculum Vitae},
   pdfauthor={Md. Mosfikur Rahman},
   pdfsubject={Curriculum Vitae},
-  pdfkeywords={Applied Machine Learning, Distributed Systems, Data-Intensive Systems,
-    Health Analytics, IoT, Machine Learning for Security, Software Engineering},
+  pdfkeywords={Machine Learning for Systems, Distributed Systems, Cloud Reliability,
+    Anomaly Detection, Microservice Infrastructure, Resource Management,
+    Machine Learning for Security},
   pdfcreator={},
   pdfproducer={},
 }
@@ -43,7 +44,7 @@
   {\large\scshape}
   {}{0em}{}
   [\vspace{-6pt}\rule{\textwidth}{0.5pt}\vspace{-2pt}]
-\titlespacing*{\section}{0pt}{14pt}{7pt}
+\titlespacing*{\section}{0pt}{12pt}{6pt}
 
 % A section heading never sits alone at the foot of a page
 \let\origsection\section
@@ -58,7 +59,7 @@
 \newenvironment{datedlist}
   {\begin{list}{}{%
      \setlength{\leftmargin}{3.3cm}\setlength{\labelwidth}{2.9cm}
-     \setlength{\labelsep}{0.4cm}\setlength{\itemsep}{7pt}
+     \setlength{\labelsep}{0.4cm}\setlength{\itemsep}{5pt}
      \setlength{\parsep}{0pt}\setlength{\topsep}{4pt}
      \renewcommand{\makelabel}[1]{##1\hfill}}%
    \interlinepenalty=10000 }
@@ -69,12 +70,11 @@
 \newenvironment{pubs}
   {\begin{list}{}{%
      \setlength{\leftmargin}{1.5cm}\setlength{\labelwidth}{1.2cm}
-     \setlength{\labelsep}{0.3cm}\setlength{\itemsep}{5pt}
+     \setlength{\labelsep}{0.3cm}\setlength{\itemsep}{3pt}
      \setlength{\parsep}{0pt}\setlength{\topsep}{4pt}
      \renewcommand{\makelabel}[1]{##1\hfill}}%
    \interlinepenalty=10000 }
   {\end{list}}
-
 
 \newcommand{\me}{\textbf{Rahman, Md. Mosfikur}}
 % \detokenize keeps the underscore in a DOI from being read as maths
@@ -95,6 +95,9 @@
    \href{mailto:mdmosfikurrahman.cse@gmail.com}{mdmosfikurrahman.cse@gmail.com}}
 
   \vspace{2pt}
+  {\small ORCID \href{https://orcid.org/0000-0002-2370-2983}{orcid.org/0000-0002-2370-2983}}
+
+  \vspace{2pt}
   {\small
    \href{https://mdmosfikurrahman.github.io}{mdmosfikurrahman.github.io}
    \sep
@@ -108,9 +111,8 @@
 % ---------------- Research Interests ----------------
 \section{Research Interests}
 
-Applied machine learning for data-intensive systems: health and behavioural analytics,
-machine learning for systems and security, and the large-scale distributed software that
-makes such analysis possible in production.
+Machine learning for large-scale distributed systems: anomaly detection, failure prediction
+and resource management in production microservice infrastructure, and in systems security.
 
 % ---------------- Education ----------------
 \section{Education}
@@ -118,7 +120,7 @@ makes such analysis possible in production.
 \begin{datedlist}
 \item[2018 -- 2021] \textbf{B.Sc. in Computer Science and Engineering}\\
   Daffodil International University, Dhaka, Bangladesh\\
-  CGPA 3.83 / 4.00
+  Four-year programme. CGPA 3.83 / 4.00
 
 \item[2021] \textbf{Erasmus+ International Exchange} (one semester)\\
   Adam Mickiewicz University, Pozna\'n, Poland
@@ -127,18 +129,43 @@ makes such analysis possible in production.
 % ---------------- Skills ----------------
 \section{Technical Skills}
 
-\begin{tabularx}{\textwidth}{@{}p{4.0cm}X@{}}
-\textbf{Research} & Experimental design, statistical analysis, feature engineering,
-  model evaluation, academic writing \\[5pt]
-\textbf{Machine Learning} & Supervised learning, deep learning, CNNs, applied NLP,
-  data preprocessing and visualisation \\[5pt]
+\begin{tabularx}{\textwidth}{@{}p{2.9cm}@{\hspace{0.4cm}}X@{}}
+\textbf{Machine Learning} & Supervised learning, deep learning, CNNs, anomaly and
+  intrusion detection, applied NLP, data preprocessing and visualisation \\[5pt]
+\textbf{Systems} & Distributed systems, microservice architecture, multi-tenancy, REST,
+  GraphQL, gRPC, Server-Sent Events, observability and distributed tracing, Docker,
+  Kubernetes, Azure, AWS \\[5pt]
 \textbf{Languages} & Python, C\#, Java, TypeScript, SQL \\[5pt]
-\textbf{Systems} & Distributed systems, microservice architecture, REST, GraphQL, gRPC,
-  event streaming, Docker, Kubernetes, Azure, AWS \\[5pt]
 \textbf{Data} & SQL Server, PostgreSQL, Oracle, MySQL, MongoDB, DynamoDB, Redis,
   Elasticsearch \\[5pt]
 \textbf{Certifications} & IBM Data Science Professional Certificate (Coursera) \\
 \end{tabularx}
+
+% ---------------- Professional experience ----------------
+\section{Professional Experience}
+
+\begin{datedlist}
+\item[2024 -- Present] \textbf{Engineering Team Lead} (Software Engineer L-II),
+  Akij iBOS Ltd., Dhaka\\
+  Architected a multi-tenant travel platform of eight .NET~9 microservices, from an empty
+  repository to three live deployments serving 742 B2B agency accounts. Designed the
+  flight-search aggregation layer, fanning out over gRPC to eleven supplier and GDS
+  connectors (Sabre, Amadeus, Travelport) over Server-Sent Events: 1,000+ fares in under ten
+  seconds, the first in approximately four. Modelled pricing and discount logic as tenant
+  configuration, moving 96 live rules out of the deploy path. Built the observability layer
+  capturing every inter-service call, now the primary production diagnosis tool. Led a team
+  of ten.
+
+\item[2023 -- 2024] \textbf{Software Engineer}, REVE Systems Ltd., Dhaka\\
+  Delivered the Legal Case and Utilization Declaration modules of the National Board of
+  Revenue's Customs Bond Management System in Java, Spring Boot and Oracle, replacing a
+  manual compliance process for garment exporters. Improved system throughput by
+  approximately 25\% through query tuning and data-access optimisation.
+
+\item[2022 -- 2023] \textbf{Software Engineer} (Backend), BJIT Group, Dhaka\\
+  Built a GraphQL Backend-for-Frontend for Rakuten e-commerce modules, cutting nested-query
+  latency through resolver batching and schema stitching.
+\end{datedlist}
 
 % ---------------- Publications ----------------
 \section{Publications}
@@ -165,8 +192,7 @@ Ten peer-reviewed publications, three as first author; author name in bold.
 \item[{[J2]}] Shetu, S.~F., \me, Ahmed, A., Mahin, M.~F., Akib, M.~A.~U., \&
   Saifuzzaman, M. (2021). Impactful e-learning framework: A new hybrid form of education.
   \textit{Current Research in Behavioral Sciences}, 2, 100038. Elsevier.
-  \doi{10.1016/j.crbeha.2021.100038}\\
-  \textit{Most-cited work.}
+  \doi{10.1016/j.crbeha.2021.100038}
 
 \item[{[J1]}] Saifuzzaman, M., \me, Shetu, S.~F., \& Moon, N.~N. (2021).
   COVID-19 and Bangladesh: Situation report, comparative analysis, and case study.
@@ -235,12 +261,19 @@ Ten peer-reviewed publications, three as first author; author name in bold.
 % ---------------- Service ----------------
 \section{Peer Review}
 
+Reviewed 37 manuscripts for international journals, alongside service on three
+conference programme committees.
+
+Reviewer for four international journals and three conferences.
+
+\vspace{4pt}
+
 \begin{datedlist}
 \item[Journals]
-  \textit{ISA Transactions}\\
+  \textit{ISA Transactions}, Elsevier Q1 (7 reviews)\\
   \textit{Journal of King Saud University -- Computer and Information Sciences}\\
-  \textit{Natural Language Processing Journal}\\
-  \textit{Current Research in Behavioral Sciences}
+  \textit{Natural Language Processing Journal} (1 review)\\
+  \textit{Current Research in Behavioral Sciences}, Elsevier (29 reviews)
 
 \item[Conferences]
   4th International Conference on Deep Learning, Artificial Intelligence and Robotics (2022)\\
@@ -264,7 +297,7 @@ Ten peer-reviewed publications, three as first author; author name in bold.
 
 \begin{datedlist}
 \item[2024 -- Present] \textbf{Engineering Team Lead}, Akij iBOS Ltd.\\
-  Train and mentor junior engineers across three teams.
+  Established the code review and pair-programming practice the team works to.
 
 \item[2021] \textbf{Vice President, Research \& Career Wing}, Computer \& Programming
   Club, Daffodil International University\\
@@ -272,28 +305,5 @@ Ten peer-reviewed publications, three as first author; author name in bold.
   publishing, academic writing, and conference presentation.
 
 \end{datedlist}
-
-% ---------------- Professional experience ----------------
-\section{Professional Experience}
-
-\begin{datedlist}
-\item[2024 -- Present] \textbf{Engineering Team Lead} (Software Engineer L-II),
-  Akij iBOS Ltd., Dhaka\\
-  Own end-to-end backend architecture for a multi-tenant travel booking platform of eight
-  .NET~9 microservices, taken from an empty repository to three live client deployments.
-  Designed a supplier aggregation layer fanning out over gRPC to eleven external
-  connectors, and a configuration-driven pricing engine.
-
-\item[2023 -- 2024] \textbf{Software Engineer}, REVE Systems Ltd., Dhaka\\
-  Delivered modules of the Customs Bond Management System for the National Board of
-  Revenue, a national platform digitising customs bond compliance. Improved system
-  throughput by approximately 25\% through query and data-access optimisation.
-
-\item[2022 -- 2023] \textbf{Software Engineer} (Backend), BJIT Group, Dhaka\\
-  Built a GraphQL Backend-for-Frontend unifying multiple services for Rakuten e-commerce
-  modules, reducing nested-query latency through resolver batching and schema stitching.
-\end{datedlist}
-
-
 
 \end{document}
